@@ -1,4 +1,5 @@
 ---
+layout: default
 title: VSCode Setup for GH Python scripting
 permalink: /vscode-rhino-setup/
 ---
