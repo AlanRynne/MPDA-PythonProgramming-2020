@@ -1,4 +1,4 @@
-remote_theme: Paramdigma/hydryne-jekyll-theme
+theme: jekyll-theme-cayman
 title: MPDA'20 Python Introduction
 url: 'https://rynne.es'
 baseurl: '/MPDA-PythonProgramming-2020'
