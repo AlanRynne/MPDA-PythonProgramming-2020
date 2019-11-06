@@ -1,0 +1,29 @@
+.reveal {
+  font-size: 40px;
+}
+
+.reveal pre {
+  box-shadow: none;
+  border: 1pt solid gray;
+  background-color: white;
+  font-size: 0.75em;
+  padding: 0.5em;
+}
+
+p code, li code, h1 code, h2 code, h3 code, h4 code, td code {
+  color: steelblue;
+  font-weight: bold;
+}
+
+.reveal section img {
+  border: none;
+  box-shadow: none;
+}
+
+em {
+  color: palevioletred;
+}
+
+strong {
+  color: rebeccapurple;
+}

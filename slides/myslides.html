@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="MPDA’20">
+  <meta name="dcterms.date" content="2019-11-06">
+  <title>Python Intro</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://revealjs.com/css/reset.css">
+  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+  <style>
+    code {
+      white-space: pre-wrap;
+    }
+
+    span.smallcaps {
+      font-variant: small-caps;
+    }
+
+    span.underline {
+      text-decoration: underline;
+    }
+
+    div.column {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+    }
+  </style>
+  <style>
+    code.sourceCode>span {
+      display: inline-block;
+      line-height: 1.25;
+    }
+
+    code.sourceCode>span {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    code.sourceCode>span:empty {
+      height: 1.2em;
+    }
+
+    .sourceCode {
+      overflow: visible;
+    }
+
+    code.sourceCode {
+      white-space: pre;
+      position: relative;
+    }
+
+    div.sourceCode {
+      margin: 1em 0;
+    }
+
+    pre.sourceCode {
+      margin: 0;
+    }
+
+    @media screen {
+      div.sourceCode {
+        overflow: auto;
+      }
+    }
+
+    @media print {
+      code.sourceCode {
+        white-space: pre-wrap;
+      }
+
+      code.sourceCode>span {
+        text-indent: -5em;
+        padding-left: 5em;
+      }
+    }
+
+    pre.numberSource code {
+      counter-reset: source-line 0;
+    }
+
+    pre.numberSource code>span {
+      position: relative;
+      left: -4em;
+      counter-increment: source-line;
+    }
+
+    pre.numberSource code>span>a:first-child::before {
+      content: counter(source-line);
+      position: relative;
+      left: -1em;
+      text-align: right;
+      vertical-align: baseline;
+      border: none;
+      display: inline-block;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 0 4px;
+      width: 4em;
+      color: #aaaaaa;
+    }
+
+    pre.numberSource {
+      margin-left: 3em;
+      border-left: 1px solid #aaaaaa;
+      padding-left: 4px;
+    }
+
+    div.sourceCode {}
+
+    @media screen {
+      code.sourceCode>span>a:first-child::before {
+        text-decoration: underline;
+      }
+    }
+
+    code span.al {
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    /* Alert */
+    code span.an {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Annotation */
+    code span.at {
+      color: #7d9029;
+    }
+
+    /* Attribute */
+    code span.bn {
+      color: #40a070;
+    }
+
+    /* BaseN */
+    code span.bu {}
+
+    /* BuiltIn */
+    code span.cf {
+      color: #007020;
+      font-weight: bold;
+    }
+
+    /* ControlFlow */
+    code span.ch {
+      color: #4070a0;
+    }
+
+    /* Char */
+    code span.cn {
+      color: #880000;
+    }
+
+    /* Constant */
+    code span.co {
+      color: #60a0b0;
+      font-style: italic;
+    }
+
+    /* Comment */
+    code span.cv {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* CommentVar */
+    code span.do {
+      color: #ba2121;
+      font-style: italic;
+    }
+
+    /* Documentation */
+    code span.dt {
+      color: #902000;
+    }
+
+    /* DataType */
+    code span.dv {
+      color: #40a070;
+    }
+
+    /* DecVal */
+    code span.er {
+      color: #ff0000;
+      font-weight: bold;
+    }
+
+    /* Error */
+    code span.ex {}
+
+    /* Extension */
+    code span.fl {
+      color: #40a070;
+    }
+
+    /* Float */
+    code span.fu {
+      color: #06287e;
+    }
+
+    /* Function */
+    code span.im {}
+
+    /* Import */
+    code span.in {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Information */
+    code span.kw {
+      color: #007020;
+      font-weight: bold;
+    }
+
+    /* Keyword */
+    code span.op {
+      color: #666666;
+    }
+
+    /* Operator */
+    code span.ot {
+      color: #007020;
+    }
+
+    /* Other */
+    code span.pp {
+      color: #bc7a00;
+    }
+
+    /* Preprocessor */
+    code span.sc {
+      color: #4070a0;
+    }
+
+    /* SpecialChar */
+    code span.ss {
+      color: #bb6688;
+    }
+
+    /* SpecialString */
+    code span.st {
+      color: #4070a0;
+    }
+
+    /* String */
+    code span.va {
+      color: #19177c;
+    }
+
+    /* Variable */
+    code span.vs {
+      color: #4070a0;
+    }
+
+    /* VerbatimString */
+    code span.wa {
+      color: #60a0b0;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://revealjs.com/css/theme/white.css" id="theme">
+  <link rel="stylesheet" href="revealCustom.css" />
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'https://revealjs.com/css/print/pdf.css' :
+      'https://revealjs.com/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+    document.write('<link rel="stylesheet" href="' +
+      (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') +
+      '.css" type="text/css" media="print">');
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section id="title-slide">
+        <h1 class="title">Python Intro</h1>
+        <p class="author">MPDA’20</p>
+        <p class="date">November 6, 2019</p>
+      </section>
+
+      <section>
+        <section id="what-is-python" class="title-slide slide level1">
+          <h1>What is <code>Python</code>?</h1>
+          <p><img data-src="assets/img/python-code.jpg" style="width:50.0%" /></p>
+        </section>
+        <section class="slide level2">
+
+          <p>Python is an <em>object-oriented</em> programming language, first developed in 1980.</p>
+          <p>It has become extremelly popular in recent years due to its ease of use.</p>
+        </section>
+        <section class="slide level2">
+
+          <p><em>object oriented</em> means that the language is structure around <code>objects</code>, which are also
+            called <code>classes</code>:</p>
+          <ul>
+            <li>Each <code>class</code> <em>contains</em> (or <em>encapsulates</em>) a specific functionality.</li>
+            <li>A class may <em>inherit</em> functionality from it’s parent class.
+              <ul>
+                <li>This makes the language extremelly extendable.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section class="slide level2">
+
+          <p><img data-src="assets/img/inheritance-multi-level.png" style="width:100.0%" /></p>
+        </section>
+        <section class="slide level2">
+
+          <p><img data-src="assets/img/inheritance-shapes.jpeg" style="width:70.0%" /></p>
+        </section>
+      </section>
+      <section>
+        <section id="python-structure" class="title-slide slide level1">
+          <h1><code>Python</code> structure</h1>
+          <div>
+            <ol type="1">
+              <li class="fragment">Comments</li>
+              <li class="fragment">Variables</li>
+              <li class="fragment">Methods</li>
+              <li class="fragment">Classes</li>
+            </ol>
+          </div>
+        </section>
+        <section id="comments" class="slide level2">
+          <h2>Comments</h2>
+          <div class="sourceCode" id="cb1">
+            <pre
+              class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># This is a comment</span></span></code></pre>
+          </div>
+          <p>Comments are just text, they do not affect our code in any way.</p>
+          <p>They are used to include detailed instructions or clarifications in our code.</p>
+          <p>Comments in <code>Python</code> always start with a <em>hashtag</em> <code>#</code></p>
+        </section>
+        <section id="variables" class="slide level2">
+          <h2>Variables</h2>
+          <div class="sourceCode" id="cb2">
+            <pre
+              class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>name <span class="op">=</span> <span class="st">&quot;Alan&quot;</span></span></code></pre>
+          </div>
+          <p>Variables store information to be referenced and used by programs.</p>
+          <p>They also provide a way of <strong>labeling data</strong> with a descriptive name.</p>
+        </section>
+        <section id="computed-variables" class="slide level2">
+          <h2>Computed variables</h2>
+          <div class="sourceCode" id="cb3">
+            <pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>y <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>z <span class="op">=</span> x <span class="op">+</span> y</span></code></pre>
+          </div>
+          <p>Computed variables have values that are the result of an operation.</p>
+          <p>This operation can be very simple (like a sum), or extremelly complex.</p>
+        </section>
+        <section id="methods" class="slide level2">
+          <h2>Methods</h2>
+          <div class="sourceCode" id="cb4">
+            <pre
+              class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> FullName(name, surname):</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="cf">return</span> name <span class="op">+</span> surname</span></code></pre>
+          </div>
+          <p>Methods (also called functions), <em>encapsulate</em> a specific functionality in a specific name.</p>
+          <p>Methods can have many inputs, but only one output called the <strong>return value</strong> of the function
+          </p>
+        </section>
+        <section id="classes" class="slide level2">
+          <h2>Classes</h2>
+          <div class="sourceCode" id="cb5">
+            <pre
+              class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">class</span> Person:</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    name <span class="op">=</span> <span class="st">&quot;Alan&quot;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>    surname <span class="op">=</span> <span class="st">&quot;Rynne&quot;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="kw">def</span> FullName(name, surname):</span>
+<span id="cb5-6"><a href="#cb5-6"></a>        <span class="cf">return</span> name <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> surname</span></code></pre>
+          </div>
+          <p>Classes contain variables and methods, that are related to the same concept.</p>
+        </section>
+        <section id="libraries" class="slide level2">
+          <h2>Libraries</h2>
+          <div class="sourceCode" id="cb6">
+            <pre
+              class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> math</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> Rhino.Geometry <span class="im">as</span> RG</span></code></pre>
+          </div>
+          <p>Libraries are a collection of classes defined by a given name and have to be <em>imported</em> into your
+            script.</p>
+          <ul>
+            <li>The <code>math</code> library contains many usefull functions like <code>sin()</code> or
+              <code>cos()</code></li>
+            <li>The <code>Rhino</code> library contains everything <em>Rhino</em> related</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section id="built-in-classes" class="title-slide slide level1">
+          <h1>Built-in classes</h1>
+          <p>Python already comes with some basic classes, which are usually refered to as <em>data-types</em>.</p>
+          <p>These <em>data-types</em> contain the most basic of functionality</p>
+        </section>
+        <section class="slide level2">
+
+          <p>Some basic data-types are:</p>
+          <table>
+            <thead>
+              <tr class="header">
+                <th style="text-align: center;">Type</th>
+                <th style="text-align: center;">Name</th>
+                <th style="text-align: center;">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="odd">
+                <td style="text-align: center;"><code>int</code></td>
+                <td style="text-align: center;">Integer</td>
+                <td style="text-align: center;"><code>5</code></td>
+              </tr>
+              <tr class="even">
+                <td style="text-align: center;"><code>double</code></td>
+                <td style="text-align: center;">Double</td>
+                <td style="text-align: center;"><code>1.0435</code></td>
+              </tr>
+              <tr class="odd">
+                <td style="text-align: center;"><code>bool</code></td>
+                <td style="text-align: center;">Boolean</td>
+                <td style="text-align: center;"><code>True</code>, <code>False</code></td>
+              </tr>
+              <tr class="even">
+                <td style="text-align: center;"><code>str</code></td>
+                <td style="text-align: center;">String</td>
+                <td style="text-align: center;"><code>"Just text"</code></td>
+              </tr>
+              <tr class="odd">
+                <td style="text-align: center;"><code>char</code></td>
+                <td style="text-align: center;">Character</td>
+                <td style="text-align: center;"><code>'a'</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="slide level2">
+
+          <p>Other more complex data-types include <em>collections</em>:</p>
+          <table>
+            <thead>
+              <tr class="header">
+                <th style="text-align: center;">Type</th>
+                <th style="text-align: center;">Name</th>
+                <th style="text-align: center;">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="odd">
+                <td style="text-align: center;"><code>[]</code></td>
+                <td style="text-align: center;">List</td>
+                <td style="text-align: center;"><code>[1,4,5,8]</code></td>
+              </tr>
+              <tr class="even">
+                <td style="text-align: center;"><code>()</code></td>
+                <td style="text-align: center;">Tuple</td>
+                <td style="text-align: center;"><code>("Alan","Programmer")</code></td>
+              </tr>
+              <tr class="odd">
+                <td style="text-align: center;"><code>{}</code></td>
+                <td style="text-align: center;">Dictionary</td>
+                <td style="text-align: center;"><code>{1:"Steve", 2:"Bill"}</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+      <section>
+        <section id="rhino-classes" class="title-slide slide level1">
+          <h1>Rhino classes</h1>
+          <p>We will be using many <code>Rhino</code> classes during this course. Mainly the ones under
+            <code>Rhino.Geometry</code></p>
+          <div class="sourceCode" id="cb7">
+            <pre
+              class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> Rhino.Geometry <span class="im">as</span> RG</span></code></pre>
+          </div>
+        </section>
+        <section class="slide level2">
+
+          <p>Some of the most popular ones will be</p>
+          <table>
+            <thead>
+              <tr class="header">
+                <th style="text-align: center;">Type</th>
+                <th style="text-align: center;">Name</th>
+                <th style="text-align: center;">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="odd">
+                <td style="text-align: center;"><code>Point3d</code></td>
+                <td style="text-align: center;">3D Point</td>
+                <td style="text-align: center;"><code>RG.Point3d()</code></td>
+              </tr>
+              <tr class="even">
+                <td style="text-align: center;"><code>Vector3d</code></td>
+                <td style="text-align: center;">3D Vector</td>
+                <td style="text-align: center;"><code>RG.Vector3d()</code></td>
+              </tr>
+              <tr class="odd">
+                <td style="text-align: center;"><code>Polyline</code></td>
+                <td style="text-align: center;">Polyline</td>
+                <td style="text-align: center;"><code>RG.Polyline()</code></td>
+              </tr>
+              <tr class="even">
+                <td style="text-align: center;"><code>NurbsCurve</code></td>
+                <td style="text-align: center;">3D Curve</td>
+                <td style="text-align: center;"><code>RG.NurbsCurve()</code></td>
+              </tr>
+              <tr class="odd">
+                <td style="text-align: center;"><code>Mesh</code></td>
+                <td style="text-align: center;">Polygonal Mesh</td>
+                <td style="text-align: center;"><code>RG.Mesh()</code></td>
+              </tr>
+              <tr class="even">
+                <td style="text-align: center;"><code>NurbsSurface</code></td>
+                <td style="text-align: center;">Nurbs Surface</td>
+                <td style="text-align: center;"><code>RG.NurbsSurface()</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+      <section>
+        <section id="how" class="title-slide slide level1">
+          <h1>How?</h1>
+        </section>
+        <section class="slide level2">
+
+          <p>We will be using the <code>GHPython</code> component</p>
+          <p><img data-src="assets/img/ghpython-component-detail.png" style="width:65.0%" /></p>
+        </section>
+        <section class="slide level2">
+
+          <p>And <a href="https://code.visualstudio.com"><strong>VSCode</strong></a> further in the course</p>
+          <p><img data-src="assets/img/vscode-python-rhino.png" style="width:65.0%" /></p>
+        </section>
+      </section>
+      <section>
+        <section id="resources" class="title-slide slide level1">
+          <h1>Resources</h1>
+        </section>
+        <section id="generic-resources" class="slide level2">
+          <h2>Generic resources</h2>
+          <ol type="1">
+            <li><a href="https://developer.rhino3d.com/guides/">Rhino Developer Docs</a></li>
+            <li><a href="https://developer.rhino3d.com/api/RhinoCommon/html/R_Project_RhinoCommon.htm">RhinoCommon
+                API</a></li>
+            <li><a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers">Python for Non-Programmers</a></li>
+          </ol>
+        </section>
+        <section id="rhinogh-resources" class="slide level2">
+          <h2>Rhino/GH resources</h2>
+          <ul>
+            <li><a href="https://www.rhino3d.com/download/ironpython/5.0/rhinopython101">RhinoPython Primer</a></li>
+            <li><a href="https://codeofspace.com/tutorials/">Code of Space</a></li>
+            <li><a href="http://designalyze.com/course/intro-scripting-python-rhino">Designalyze</a></li>
+            <li><a href="https://developer.rhino3d.com/samples/#rhinopython">Rhino Python Samples</a></li>
+          </ul>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://revealjs.com/js/reveal.js"></script>
+
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      // Push each slide change to the browser history
+      history: true,
+      // Transition style
+      transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [{
+          src: 'https://revealjs.com/lib/js/classList.js',
+          condition: function () {
+            return !document.body.classList;
+          }
+        },
+        {
+          src: 'https://revealjs.com/plugin/zoom-js/zoom.js',
+          async: true
+        },
+        {
+          src: 'https://revealjs.com/plugin/notes/notes.js',
+          async: true
+        }
+      ]
+    });
+  </script>
+</body>
+
+</html>
