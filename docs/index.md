@@ -1,5 +1,5 @@
 ---
-title: Python Introduction Course
+title: Home Page
 author:
   - MPDA'20
   - Alan Rynne
