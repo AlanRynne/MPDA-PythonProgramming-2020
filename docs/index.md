@@ -4,7 +4,6 @@ author:
   - MPDA'20
   - Alan Rynne
 permalink: /
-layout: page
 ---
 
 ## Slides
