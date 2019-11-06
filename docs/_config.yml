@@ -2,3 +2,4 @@ theme: jekyll-theme-cayman
 title: MPDA'20 Python Introduction
 url: 'https://rynne.es'
 baseurl: '/MPDA-PythonProgramming-2020'
+google_analytics: UA-119161618-1
