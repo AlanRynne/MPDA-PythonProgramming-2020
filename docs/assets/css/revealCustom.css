@@ -10,9 +10,16 @@
   padding: 0.5em;
 }
 
-p code, li code, h1 code, h2 code, h3 code, h4 code, td code {
+p code,
+li code,
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+td code {
   color: steelblue;
   font-weight: bold;
+  background-color: transparent;
 }
 
 .reveal section img {
@@ -26,4 +33,13 @@ em {
 
 strong {
   color: rebeccapurple;
+}
+
+.columns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.columns .column {
 }

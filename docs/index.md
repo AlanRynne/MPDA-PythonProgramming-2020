@@ -10,9 +10,9 @@ permalink: /
 
 1. [Python Intro](slides/pythonIntro.html)
 
-## PDFs
+## Guides
 
-> To be added soon...
+1. [RhinoCommon Python + VSCode](vscode-rhino-setup/)
 
 ## Scripts
 

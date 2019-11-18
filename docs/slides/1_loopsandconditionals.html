@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="MPDA’20">
+  <title>Lists, Loops and Conditionals</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://revealjs.com/css/reset.css">
+  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://revealjs.com/css/theme/white.css" id="theme">
+  <link rel="stylesheet" href="../assets/css/revealCustom.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+  document.write( '<link rel="stylesheet" href="../assets/css/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+      '.css" type="text/css" media="print">' );
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Lists, Loops and Conditionals</h1>
+  <p class="author">MPDA’20</p>
+  <p class="date">November 13-20, 2019</p>
+</section>
+
+<section><section id="lists-in-python" class="title-slide slide level1"><h1>Lists in <code>python</code></h1><p>In python, lists are defined using <em>square brackets</em> <code>[]</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>x <span class="op">=</span> [] <span class="co"># This is an empty list</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>y <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>] <span class="co"># This is a list of numbers</span></span></code></pre></div></section><section class="slide level2">
+
+<p>You can also access items on a list individually…</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>fruitList <span class="op">=</span> [<span class="st">&quot;organge&quot;</span>,<span class="st">&quot;apple&quot;</span>,<span class="st">&quot;strawberry&quot;</span>]</span>
+<span id="cb2-2"><a href="#cb2-2"></a>x <span class="op">=</span> fruitList[<span class="dv">0</span>] <span class="co"># x = &quot;orange</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>y <span class="op">=</span> fruitList[<span class="dv">2</span>] <span class="co"># y = &quot;strawberry&quot;</span></span></code></pre></div>
+</section><section class="slide level2">
+
+<p>…and in ranges of indexes separated by <code>:</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>fruitList <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>,</span>
+<span id="cb3-2"><a href="#cb3-2"></a>            <span class="st">&quot;orange&quot;</span>, <span class="st">&quot;kiwi&quot;</span>, <span class="st">&quot;melon&quot;</span>]</span>
+<span id="cb3-3"><a href="#cb3-3"></a>x <span class="op">=</span> fruitList[<span class="dv">2</span>:<span class="dv">4</span>]</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># x = [&quot;cherry&quot;, &quot;orange&quot;, &quot;kiwi&quot;]</span></span></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="append-function"><code>append()</code> function</h3>
+<p>Adding objects to the end of a list</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>thisList <span class="op">=</span> [] <span class="co"># An empty list</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>thisList.append(<span class="st">&quot;Something&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># now thisList = [&quot;Something&quot;]</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>thisList.append(<span class="st">&quot;Else&quot;</span>)</span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co"># new thisList =[&quot;Something&quot;, &quot;Else&quot;]</span></span></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="insert-function"><code>insert()</code> function</h3>
+<p>Adding an item at a specified index</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>thisList <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>,<span class="st">&quot;cow&quot;</span>,<span class="st">&quot;cat&quot;</span>]</span>
+<span id="cb5-2"><a href="#cb5-2"></a>thisList.insert(<span class="dv">1</span>,<span class="st">&quot;bird&quot;</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># thisList = [&quot;dog&quot;, &quot;bird&quot;, &quot;cow&quot;,&quot;cat&quot;]</span></span></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="remove-function"><code>remove()</code> function</h3>
+<p>Removing an item from a list</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>thisList <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>,<span class="st">&quot;cow&quot;</span>,<span class="st">&quot;cat&quot;</span>]</span>
+<span id="cb6-2"><a href="#cb6-2"></a>thisList.remove(<span class="st">&quot;cow&quot;</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># thisList = [&quot;dog&quot;,&quot;cat&quot;]</span></span></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="pop-function"><code>pop()</code> function</h3>
+<p>Removing an item from a specified index</p>
+<p>or the last index if no index is provided.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>thisList <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>,<span class="st">&quot;cow&quot;</span>,<span class="st">&quot;cat&quot;</span>]</span>
+<span id="cb7-2"><a href="#cb7-2"></a>thisList.pop()</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># thisList = [&quot;dog&quot;, &quot;cow&quot;]</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a>thisList <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>,<span class="st">&quot;cow&quot;</span>,<span class="st">&quot;cat&quot;</span>]</span>
+<span id="cb7-6"><a href="#cb7-6"></a>thisList.pop(<span class="dv">0</span>)</span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co"># thisList = [&quot;cow&quot;, &quot;cat&quot;]</span></span></code></pre></div>
+</section><section id="built-in-functions" class="slide level2">
+<h2>Built-in functions</h2>
+</section><section class="slide level2">
+
+<h3 id="range-function"><code>range()</code> function</h3>
+<p>The <code>range()</code> function returns a sequence of numbers…</p>
+<ol type="1">
+<li><em>starting</em> from 0 by default,</li>
+<li>and <em>increments</em> by 1 (by default),</li>
+<li>and <em>ends</em> at a specified number.</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="bu">range</span>(<span class="dv">5</span>) <span class="co"># Returns [0,1,2,3,4]</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">5</span>) <span class="co"># Returns [2,3,4]</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">2</span>) <span class="co"># Returns [0,2,4,6,8]</span></span></code></pre></div>
+</section><section class="slide level2">
+
+<h3 id="len-function"><code>len()</code> function</h3>
+<p>The <code>len()</code> function returns the current length of a list:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>thisList <span class="op">=</span> [<span class="st">&quot;dog&quot;</span>,<span class="st">&quot;cow&quot;</span>,<span class="st">&quot;cat&quot;</span>,<span class="st">&quot;bird&quot;</span>]</span>
+<span id="cb9-2"><a href="#cb9-2"></a>x <span class="op">=</span> <span class="bu">len</span>(thisList)</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="co"># x = 4</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>thisList.append(<span class="st">&quot;bee&quot;</span>)</span>
+<span id="cb9-5"><a href="#cb9-5"></a>x <span class="op">=</span> <span class="bu">len</span>(thisList)</span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="co"># x = 5</span></span></code></pre></div>
+</section></section>
+<section><section id="what-are-loops" class="title-slide slide level1"><h1>What are <code>loops</code>?</h1></section><section class="slide level2">
+
+<p>In computer science, a <code>loop</code> is a programming structure that <strong>repeats</strong> a sequence of instructions <strong><em>until a specific condition is met</em></strong>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="cf">for</span> VARIABLE_NAME <span class="kw">in</span> LIST_TO_ITERATE:</span>
+<span id="cb10-2"><a href="#cb10-2"></a>    <span class="co"># Code to be looped goes here!!</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="co"># Everything inside the loop</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>    <span class="co"># should be INDENTED</span></span></code></pre></div>
+</section><section id="examples" class="slide level2">
+<h2>Examples</h2>
+</section><section class="slide level2">
+
+<p>Print each <em>fruit</em> in a <strong>fruit list</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="cf">for</span> fruit <span class="kw">in</span> fruits:</span>
+<span id="cb11-3"><a href="#cb11-3"></a>    <span class="bu">print</span>(fruit)</span></code></pre></div>
+</section><section class="slide level2">
+
+<p>You can also loop through the letters of a word</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="st">&quot;banana&quot;</span>:</span>
+<span id="cb12-2"><a href="#cb12-2"></a>    <span class="bu">print</span>(x)</span></code></pre></div>
+</section><section class="slide level2">
+
+<p><code>loops</code> can be <em>nested</em></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>letters <span class="op">=</span> [<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>]</span>
+<span id="cb13-2"><a href="#cb13-2"></a>numbers <span class="op">=</span> [<span class="st">&quot;1&quot;</span>,<span class="st">&quot;2&quot;</span>]</span>
+<span id="cb13-3"><a href="#cb13-3"></a>result <span class="op">=</span> []</span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="cf">for</span> i <span class="kw">in</span> letters:</span>
+<span id="cb13-5"><a href="#cb13-5"></a>    <span class="co"># Iterate through all letters</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>    <span class="cf">for</span> j <span class="kw">in</span> numbers:</span>
+<span id="cb13-7"><a href="#cb13-7"></a>        <span class="co"># Iterate throught all numbers</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a>        result.append(i<span class="op">+</span>j)</span>
+<span id="cb13-9"><a href="#cb13-9"></a><span class="co"># Once the loop finishes</span></span>
+<span id="cb13-10"><a href="#cb13-10"></a><span class="co"># result = [&quot;A1&quot;,&quot;A2&quot;,&quot;B1&quot;,&quot;B2&quot;,&quot;C1&quot;,&quot;C2&quot;]</span></span></code></pre></div>
+</section></section>
+<section id="what-are-if-statements" class="title-slide slide level1"><h1>What are <code>if</code> statements?</h1><blockquote>
+<p>To be completed before the 20th of November!</p>
+</blockquote></section>
+<section><section id="references" class="title-slide slide level1"><h1>References</h1></section><section id="generic-resources" class="slide level2">
+<h2>Generic resources</h2>
+<ol type="1">
+<li><a href="https://www.w3schools.com/python/default.asp">Generic python</a></li>
+<li><a href="https://app.codility.com/programmers/lessons/1-iterations/">Codility Code Challenges</a></li>
+<li><a href="https://developer.rhino3d.com/guides/">Rhino Developer Docs</a></li>
+<li><a href="https://developer.rhino3d.com/api/RhinoCommon/html/R_Project_RhinoCommon.htm">RhinoCommon API</a></li>
+<li><a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers">Python for Non-Programmers</a></li>
+</ol>
+</section><section id="rhinogh-resources" class="slide level2">
+<h2>Rhino/GH resources</h2>
+<ul>
+<li><a href="https://www.rhino3d.com/download/ironpython/5.0/rhinopython101">RhinoPython Primer</a></li>
+<li><a href="https://codeofspace.com/tutorials/">Code of Space</a></li>
+<li><a href="http://designalyze.com/course/intro-scripting-python-rhino">Designalyze</a></li>
+<li><a href="https://developer.rhino3d.com/samples/#rhinopython">Rhino Python Samples</a></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://revealjs.com/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://revealjs.com/plugin/math/math.js', async: true },
+          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
