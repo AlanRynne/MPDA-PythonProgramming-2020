@@ -9,6 +9,7 @@ permalink: /
 ## Slides
 
 1. [Python Intro](slides/pythonIntro.html)
+2. [Lists, Loops & Conditionals](slides/1_loopsandconditionals.html)
 
 ## Guides
 

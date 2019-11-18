@@ -1,6 +1,6 @@
 ---
 author: MPDA'20
-title: Lists, Loops and Conditionals
+title: Lists, Loops & Conditionals
 date: November 13-20, 2019
 theme: white
 transition: convex
