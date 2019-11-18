@@ -20,10 +20,12 @@ permalink: /
 
 ## Resources
 
-1. [Rhino Developer Docs](https://developer.rhino3d.com/guides/)
-2. [RhinoCommon API](https://developer.rhino3d.com/api/RhinoCommon/html/R_Project_RhinoCommon.htm)
-3. [Python for Non-Programmers](https://wiki.python.org/moin/BeginnersGuide/NonProgrammers)
-4. [RhinoPython Primer](https://www.rhino3d.com/download/ironpython/5.0/rhinopython101)
-5. [Code of Space](https://codeofspace.com/tutorials/)
-6. [Designalyze](http://designalyze.com/course/intro-scripting-python-rhino)
-7. [Rhino Python Samples](https://developer.rhino3d.com/samples/#rhinopython)
+1. [Generic python](https://www.w3schools.com/python/default.asp)
+2. [Codility Code Challenges](https://app.codility.com/programmers/lessons/1-iterations/)
+3. [Rhino Developer Docs](https://developer.rhino3d.com/guides/)
+4. [RhinoCommon API](https://developer.rhino3d.com/api/RhinoCommon/html/R_Project_RhinoCommon.htm)
+5. [Python for Non-Programmers](https://wiki.python.org/moin/BeginnersGuide/NonProgrammers)
+6. [RhinoPython Primer](https://www.rhino3d.com/download/ironpython/5.0/rhinopython101)
+7. [Code of Space](https://codeofspace.com/tutorials/)
+8. [Designalyze](http://designalyze.com/course/intro-scripting-python-rhino)
+9. [Rhino Python Samples](https://developer.rhino3d.com/samples/#rhinopython)
