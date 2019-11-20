@@ -189,6 +189,8 @@ for i in letters:
 
 # What are `if` statements?
 
+## {-}
+
 'if' statements provide a way to run a portion of code **only** if a specific _condition_ is met.
 
 ```python
@@ -208,6 +210,29 @@ x = 5
 if(x < 3):
     print("X is smaller than 3")
 ```
+
+## {-}
+
+> Is `x` equals to `5`?
+
+```python
+x = 5
+if(x == 5):
+    print("X is equals to 5")
+
+
+```
+
+## Comparisson operators
+
+| Operator |       Name        | Example  |
+| :------: | :---------------: | :------: |
+|    ==    |      Equals       | (a == b) |
+|    !=    |    Not Equals     | (a != b) |
+|    >     |    Bigger than    | (a > b)  |
+|    <     |   Smaller than    | (a < b)  |
+|    >=    | Bigger or equals  | (a >= b) |
+|    <=    | Smaller or equals | (a <= b) |
 
 ## {-}
 
@@ -239,7 +264,7 @@ if(x < 3 or y < 4):
 and create even more complex conditions by concatenating them using _parenthesis_ `()`:
 
 ```python
-if( (x< 3 and y < 4) or (x > 6 and y > 9) ):
+if( (x < 3 and y < 4) or (x > 6 and y > 9) ):
     print("This part will only run if:")
     print("X is smaller than 3 and Y smaller than 4")
     print("OR")
@@ -271,6 +296,70 @@ first = x < 5
 # First = True
 oppositeOfFirst = not(first)
 # oppositeOfFirst = False
+```
+
+## {-}
+
+Finally, you can _chain_ conditions together using the `elif` keyword (short for `else if`):
+
+```python
+x = 4
+if (x < 4):
+    print("Will print if X smaller than 4")
+elif (x > 8):
+    print("Will print if X is bigger than 8")
+    print("IF the previous conditions = false")
+else:
+    print("Will print if none of the")
+    print("previous conditions were true")
+    print("so x >= 4 and x <= 8")
+```
+
+## {-}
+
+`if` statements can also be **nested** (notice the _indentation_):
+
+```python
+if (x < 4):
+    if(x < 1):
+        print("Smaller than 1")
+    else:
+        print("Between 1 and 3")
+else:
+    print("Bigger or equals to 4")
+```
+
+# Combine `for` and `if`
+
+```python
+for num in list:
+    if (num < 4):
+        # Do something
+```
+
+## {-}
+
+You can check all items in a list for a condition
+
+```python
+list = [0,1,2,3,4,5,6]
+for num in list:
+    if (item < 4):
+        print("Smaller!")
+    else:
+        print("Bigger or equals!")
+```
+
+## {-}
+
+or check all items in a list **only** if a condition is met.
+
+```python
+if (len(list) > 50):
+    # this loop will only run if the length of
+    # the list is bigger than 50
+    for item in list:
+        print(item)
 ```
 
 # References
