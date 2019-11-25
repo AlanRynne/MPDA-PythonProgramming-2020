@@ -28,7 +28,7 @@ Points using circular coordinates
 ### Output:
 
 1. _points_ (list):
-   - A list of points in a straight line in the X coordinate
+   - A list of points in a circle
 
 ## Circular coordinates
 
