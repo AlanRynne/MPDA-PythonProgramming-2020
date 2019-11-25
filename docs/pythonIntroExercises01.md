@@ -5,9 +5,12 @@ permalink: /python-intro-exercises-01/
 use_math: true
 ---
 
+## Index
+
 - [Exercise 1: Circular points!](#exercise-1-circular-points)
 - [Exercise 2: Grid of points!](#exercise-2-grid-of-points)
-- [Exercise 3:](#exercise-3)
+- [Exercise 3: Finding functions in Rhino.Geometry](#exercise-3-finding-functions-in-rhinogeometry)
+- [Exercise 4: Operating on curves](#exercise-4-operating-on-curves)
 
 # Exercise 1: Circular points!
 
@@ -45,10 +48,14 @@ $$
 > If you use any mathematical operations like `sin()` or `cos()`, remember to `import math` at the beggining of your script. Then you can use them as `math.sin()` and `math.cos()`
 
 1. Create an empty list to hold your points
-2. Compute the angle `step` = `2*PI/count`
+2. Compute the angle `step` = $$2\Pi$$/`count`
 3. Loop as many times as `count`:
 4. At each iteration `i`:
-   1. Compute the angle for the current iteration (`angle = step * i`)
+   1. Compute the angle for the current iteration (`angle = step * i`). For example:
+      - when `i` $$=0 \longrightarrow $$ `angle = step * 0`
+      - when `i` $$=1 \longrightarrow $$ `angle = step * 1`
+      - when `i` $$=2 \longrightarrow $$ `angle = step * 2`
+      - etc.
    2. Compute the $$x$$, $$y$$ and $$z$$ coordinates of the point independently (one per line)
       - You'll need to use the radius and the angle from the previous step.
    3. Create the point
@@ -171,4 +178,39 @@ Try all 5 scenarios.
 >
 > If you are not sure how or why this works, try it out by it self on a separate script or using the _modulus component_ in grasshopper directly to familiarize your self with this concept.
 
-# Exercise 3: 
+# Exercise 3: Finding functions in Rhino.Geometry
+
+![](/assets/img/rhinoPython-autocomplete.png)
+
+![](/assets/img/rhinoPython-help.png)
+Using the autocomplete and the help panel in the Grasshopper Python Editor. Find the functions inside `Rhino.Geometry` to create:
+
+> #### Remember
+>
+> In the `Rhino.Geometry` library, basic geometric classes such as `Point3d` and `Plane` are created by opening parenthesis with the input values after the name. Such as:
+>
+> - To create a point: `RG.Point3d(0,1,3)` The input is 3 values.
+> - Some special cases have their own name. To create a point at $${0,0,0}$$ you can do `RG.Point3d.Origin`
+>   - Notice special names, such as `Origin` use a dot after `Point3d`.
+> - To create a vector: `RG.Vector3d(1,3,4)`
+>   - `Vector3d` also has special cases such as `RG.Vector3d.XAxis`,`RG.Vector3d.YAxis` or `RG.Vector3d.ZAxis`
+>
+> Using `.` after the name of a class will show you all the different functions, variables and special cases in that class. It is always a good idea to check them one by one to get familiarized with what each class can do.
+
+1. Find a way to create a `World XY` plane.
+2. Find a way to create a `World YZ` plane.
+3. Create a plane following these steps:
+   1. Create a point with the values you prefer.
+   2. Create a vector with the values you prefer.
+   3. Create a plane with origin at the point and whose normal is the vector you created.
+4. Create a sphere with $$center = {15,3,5}$$ and $$radius = 4.33$$
+5. Create a circle whose base plane is the plane generated in step 3 and with `radius`$$=4$$
+6. Use the circle from the previus step to generate a cylinder with `height`$$=9$$
+7. Create a torus:
+   1. Whose base plane is the plane generated in step 3
+   2. With a `majorRadius`$$= 15$$ and a `minorRadius`$$= 3.45$$
+8. Create a mesh from the cylinder created in step 6.
+
+# Exercise 4: Operating on curves
+
+> Will be added shortly!
