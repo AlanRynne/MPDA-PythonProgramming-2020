@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Python Intro Exercises 01
-permalink: /python-intro-exercies-01/
+permalink: /python-intro-exercises-01/
 ---
 
 - [Exercise 1: Circular points!](#exercise-1-circular-points)

@@ -13,7 +13,7 @@ permalink: /
 
 ## Exercises
 
-1. [Exercises 01](python-intro-exercises/)
+1. [Exercises 01](python-intro-exercises-01/)
 
 ## Guides
 
