@@ -45,7 +45,7 @@ $$
 
 ## Steps
 
-> If you use any mathematical operations like `sin()` or `cos()`, remember to `import math` at the beggining of your script. Then you can use them as `math.sin()` and `math.cos()`
+> If you use any mathematical operations like `sin()` or `cos()`, remember to `import math` at the beginning of your script. Then you can use them as `math.sin()` and `math.cos()`
 
 1. Create an empty list to hold your points
 2. Compute the angle `step` = $$2\Pi$$/`count`
@@ -74,7 +74,7 @@ If done correctly, the steps above will generate a circle around the Origin `{0,
 > #### Reminder:
 >
 > Your can add points together directly: `point = pt1 + pt2`.  
-> But you can also acces it's coordinates individually: `point.X`, `point.Y` or `point.Z` (notice the capital letter).
+> But you can also access it's coordinates individually: `point.X`, `point.Y` or `point.Z` (notice the capital letter).
 
 ### Plane instead of Point
 
@@ -107,8 +107,8 @@ Create a grid of points
 
 ### Input:
 
-1. _uCount_ (item): The ammount of points to generate in the X direction.
-2. _vCount_ (item): The ammount of points to generate in the Y direction.
+1. _uCount_ (item): The amount of points to generate in the X direction.
+2. _vCount_ (item): The amount of points to generate in the Y direction.
 
 ### Output:
 
@@ -130,7 +130,7 @@ Since the variable for each loop changes on each iteration, you can use `i` as t
 
 1. Create an empty list to hold the points in our grid.
 2. Create a loop from `0` to `uCount`
-3. For every iteration `i` (inide the loop):
+3. For every iteration `i` (inside the loop):
    1. Create a loop from `0` to `vCount`:
    2. For every iteration `j` (inside the second loop):
       1. Create a point with coordinates `{i,j,0}`
@@ -151,7 +151,7 @@ Since the variable for each loop changes on each iteration, you can use `i` as t
 2. Modify your script so that the points that you generate lie on the provided plane.
    > Remember the `Plane` class has a `PointAt(u,v,w)` function.
 
-### Adding conditinals
+### Adding conditionals
 
 Include a condition to create each point only if:
 
@@ -205,7 +205,7 @@ Using the autocomplete and the help panel in the Grasshopper Python Editor. Find
    3. Create a plane with origin at the point and whose normal is the vector you created.
 4. Create a sphere with $$center = {15,3,5}$$ and $$radius = 4.33$$
 5. Create a circle whose base plane is the plane generated in step 3 and with `radius`$$=4$$
-6. Use the circle from the previus step to generate a cylinder with `height`$$=9$$
+6. Use the circle from the previous step to generate a cylinder with `height`$$=9$$
 7. Create a torus:
    1. Whose base plane is the plane generated in step 3
    2. With a `majorRadius`$$= 15$$ and a `minorRadius`$$= 3.45$$
