@@ -48,7 +48,7 @@ $$
 > If you use any mathematical operations like `sin()` or `cos()`, remember to `import math` at the beginning of your script. Then you can use them as `math.sin()` and `math.cos()`
 
 1. Create an empty list to hold your points
-2. Compute the angle `step` = $$2\Pi$$/`count`
+2. Compute the angle `step` = $$2\pi$$/`count`
 3. Loop as many times as `count`:
 4. At each iteration `i`:
    1. Compute the angle for the current iteration (`angle = step * i`). For example:
