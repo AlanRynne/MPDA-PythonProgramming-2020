@@ -11,6 +11,10 @@ permalink: /
 1. [Python Intro](slides/pythonIntro.html)
 2. [Lists, Loops & Conditionals](slides/1_loopsandconditionals.html)
 
+## Exercises
+
+1. [Exercises 01](python-intro-exercises/)
+
 ## Guides
 
 1. [RhinoCommon Python + VSCode](vscode-rhino-setup/)
