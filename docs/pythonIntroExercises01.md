@@ -37,7 +37,7 @@ z &=& 0
 \end{eqnarray}\longrightarrow pt
 $$
 
-**where** $r$ = `radius` **and** $\theta$ = `angle`
+**where** $$r$$ = `radius` **and** $$\theta$$ = `angle`
 
 ## Steps
 
@@ -48,7 +48,7 @@ $$
 3. Loop as many times as `count`:
 4. At each iteration `i`:
    1. Compute the angle for the current iteration (`angle = step * i`)
-   2. Compute the $x$, $y$ and $z$ coordinates of the point independently (one per line)
+   2. Compute the $$x$$, $$y$$ and $$z$$ coordinates of the point independently (one per line)
       - You'll need to use the radius and the angle from the previous step.
    3. Create the point
    4. Add the point to the list
@@ -116,7 +116,7 @@ for i in range(5):
         print(i, j)
 ```
 
-Since the variable for each loop changes on each iteration, you can use `i` as the $x$ coordinate and `j` as the $y$ coordinate of a point.
+Since the variable for each loop changes on each iteration, you can use `i` as the $$x$$ coordinate and `j` as the $$y$$ coordinate of a point.
 
 ## Steps:
 
