@@ -86,7 +86,7 @@ Given this 3-dimensional list of bounding boxes, create a similar list structure
 
 # Exercise 3 - Koch Snowflake
 
-![Koch snowflake example](https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjQpcbgzcPmAhUGrxoKHbh5AYkQjRx6BAgBEAQ&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FKoch_snowflake&psig=AOvVaw0tQju6toKqWVvbNMXswsNo&ust=1576910024833957)
+![Koch snowflake example](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/KochFlake.svg/1200px-KochFlake.svg.png)
 
 We already covered this one in class, but if you need a recap you can watch [this video](https://www.khanacademy.org/math/geometry-home/geometry-volume-surface-area/koch-snowflake/v/koch-snowflake-fractal).
 
