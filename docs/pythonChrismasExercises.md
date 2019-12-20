@@ -4,9 +4,14 @@ title: Python Christmas Exercises
 permalink: /python-christmas-exercises/
 ---
 
-## Christmas Exercises Intro
+## Christmas Exercises
 
 You can find the grasshopper file for the exercises [HERE](https://drive.google.com/open?id=1RV115v27nu03aJzPV7JuUgYuIF3a7Mbv)
+
+### Delivery
+
+You should deliver the exercises by the start of the next python class in January.
+Please deliver your assignments [HERE](https://drive.google.com/drive/folders/1Sp4V0d7bfG0MUes6fCvIz_zmJQzJVyRG?usp=sharing) with filename `ChristmasExercises-STUDENTNAME.gh`
 
 ## Index
 

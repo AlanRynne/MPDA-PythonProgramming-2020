@@ -41,8 +41,6 @@ strong {
   justify-content: center;
 }
 
-.columns .column {}
-
 #skip-to-content {
-  display: none;
+  display: none !important;
 }
