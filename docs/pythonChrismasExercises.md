@@ -96,11 +96,14 @@ Create a script that will make a _Koch Snowflake_ that will run for **at least**
 
 > Remember:
 >
+> 0. Start with just one line initially.
 > 1. First do one iteration. Each line will generate 4 new lines.
-> 2. Then try to do the second iteration after that.
+> 1. Then try to do the second iteration after that.
 >   - For each line create 4 new lines
 >   - The result should be a list of 16 lines
 > 3. Modify your code so it will loop as many times as necessary.
+>   - Third iteration should result in 16 * 4 = 64 lines
+>   - Fourth iteration should result in 64 * 4 = 256 lines
 
 # Exercise 4 - Toyo Itto Tower _OPTIONAL_
 
