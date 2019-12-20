@@ -6,6 +6,8 @@ permalink: /python-christmas-exercises/
 
 ## Christmas Exercises Intro
 
+You can find the grasshopper file for the exercises [HERE](https://drive.google.com/open?id=1RV115v27nu03aJzPV7JuUgYuIF3a7Mbv)
+
 ## Index
 
 - [Exercise 1 - Connecting Points around a cylinder](#exercise-1---connecting-points-around-a-cylinder)
@@ -31,7 +33,7 @@ Each step must have it's own output. You will find the expected result's interna
 
 # Exercise 2 - Three dimensional lists
 
-![Starting list](/docs/assets/img/christmas-exercises/cube-3d-start.png)
+![Starting list](assets/img/christmas-exercises/cube-3d-start.png)
 
 In this exercise, you start with a script that already contains a triple loop:
 
@@ -68,14 +70,14 @@ This loop creates a _3-dimensional_ list structure contaning `RG.BoundingBox` (j
 
 Given this 3-dimensional list of bounding boxes, create a similar list structure that will contain only the centers of each bounding box.
 
-![Compute centers](/docs/assets/img/christmas-exercises/cube-3d-centers.png)
+![Compute centers](assets/img/christmas-exercises/cube-3d-centers.png)
 
 ## Step 2. Connect the centers
 
 1. Connect each center with all it's adjacent boxes (boxes that share a side
 2. Connect each center to the one diagonally above (`[+1][+1][+1]`)
 
-![Connect centers](/docs/assets/img/christmas-exercises/cube-3d-lines.png)
+![Connect centers](assets/img/christmas-exercises/cube-3d-lines.png)
 
 # Exercise 3 - Koch Snowflake
 
@@ -91,7 +93,7 @@ Create a script that will make a _Koch Snowflake_ that will run for **at least**
 
 In this exercise, you must create a tower inspired by Toyo Itto's Fira Tower in Barcelona.
 
-![](/docs/assets/img/christmas-exercises/toyo-itto-bcn-end.png)
+![](assets/img/christmas-exercises/toyo-itto-bcn-end.png)
 
 ## Code explanation:
 
@@ -180,7 +182,7 @@ for i in range(11):
 
 ## Step 1 - Create the main axis
 
-![](/docs/assets/img/christmas-exercises/toyo-itto-shell-axis.png)
+![](assets/img/christmas-exercises/toyo-itto-shell-axis.png)
 
 ## Step 2 - Create Perpendicular Frames
 
@@ -188,7 +190,7 @@ for i in range(11):
 
 There is a handy function for this, `curve.PerpendicularFrameAt(t)`, but be careful as it returns a _tupple_ `(bool,Plane)`. The first item is a boolean specifying if the operation was successful. The second item will be the resulting plane.
 
-![](/docs/assets/img/christmas-exercises/toyo-itto-shell-planes.png)
+![](assets/img/christmas-exercises/toyo-itto-shell-planes.png)
 
 ## Step 3 - Create Polygons
 
@@ -196,16 +198,16 @@ I suggest using circular coordinates to generate the points, and then generate a
 
 In the original grasshopper exercise, the polygons were moved up to be laying on the XY Plane. This step is optional.
 
-![](/docs/assets/img/christmas-exercises/toyo-itto-shell-polygons.png)
+![](assets/img/christmas-exercises/toyo-itto-shell-polygons.png)
 
 ## Step 4 - Create main beams
 
 Create a curve that passes through the first point of each polygon. Do the same for the rest.
 
-![](/docs/assets/img/christmas-exercises/toyo-itto-shell-mainBeams.png)
+![](assets/img/christmas-exercises/toyo-itto-shell-mainBeams.png)
 
 ## Step 5 - Create secondary beams
 
 Create lines as secondary curves, starting with t=0 on the first curve with t=0 of the second, t=0.
 
-![](/docs/assets/img/christmas-exercises/toyo-itto-shell-secBeams.png)
+![](assets/img/christmas-exercises/toyo-itto-shell-secBeams.png)
