@@ -94,6 +94,14 @@ We already covered this one in class, but if you need a recap you can watch [thi
 
 Create a script that will make a _Koch Snowflake_ that will run for **at least** 5 iterations.
 
+> Remember:
+>
+> 1. First do one iteration. Each line will generate 4 new lines.
+> 2. Then try to do the second iteration after that.
+>   - For each line create 4 new lines
+>   - The result should be a list of 16 lines
+> 3. Modify your code so it will loop as many times as necessary.
+
 # Exercise 4 - Toyo Itto Tower _OPTIONAL_
 
 In this exercise, you must create a tower inspired by Toyo Itto's Fira Tower in Barcelona.
