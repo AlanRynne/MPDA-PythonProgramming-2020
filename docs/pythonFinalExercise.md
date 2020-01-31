@@ -80,15 +80,8 @@ In order to be able to test this, create an input in your script called **inputP
 
 # Part 2 - Create the DualGraph of a mesh
 
-:::columns
-::::column
-![Initial example mesh](assets/img/final-exercise/initialMesh.png)
-::::
-
-::::column
-![Dual mesh](assets/img/final-exercise/dualMesh.png)
-::::
-:::
+![Initial example mesh](assets/img/final-exercise/initialMesh.png){width=49%}
+![Dual mesh](assets/img/final-exercise/dualMesh.png){width=49%}
 
 Add a new input to your python script node, call it `inputMesh` and set it's type hint to `Mesh`.
 
