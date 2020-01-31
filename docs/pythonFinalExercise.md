@@ -12,7 +12,7 @@ Remember you have some python cheatsheets containing most of the usefull stuff [
 
 ### Delivery
 
-You should deliver the exercises by the end of the semester - 13 February 2020
+You should deliver the exercises by the end of the semester - 17 February 2020
 Please deliver your assignments [HERE](https://drive.google.com/drive/folders/15YDnDN75bl3CAz4Slo5hx7I_1YmA0aZf?usp=sharing) with filename `FinalExercise-STUDENTNAME.gh`
 
 ## Index
