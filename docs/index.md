@@ -15,6 +15,7 @@ permalink: /
 
 1. [Exercises 01](python-intro-exercises-01/)
 2. [Christmas Exercises](python-christmas-exercises/)
+3. [Final exercise](python-final-exercise/)
 
 ## Guides
 
