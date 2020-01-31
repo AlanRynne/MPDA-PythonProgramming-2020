@@ -7,12 +7,15 @@ permalink: /python-final-exercise/
 ## Final Exercise
 
 You can find the previous class file (about functions) [HERE](https://drive.google.com/file/d/1HMUQeh4eQkgMui2GqWc_d-0sG9lg-gtY/view?usp=sharing)
+
 You can find the grasshopper file for the exercises [HERE](https://drive.google.com/open?id=1-HjKOpI9gnEjxnKC_e0Sw8iqvFAJRGEO)
+
 Remember you have some python cheatsheets containing most of the usefull stuff [HERE](https://drive.google.com/file/d/1kIzAA1Ln2IqHT0VENobCnyE7-ikAMjEO/view)
 
 ### Delivery
 
-You should deliver the exercises by the end of the semester - 17 February 2020
+You should deliver the exercises by the end of the semester - _**17 February 2020**_
+
 Please deliver your assignments [HERE](https://drive.google.com/drive/folders/15YDnDN75bl3CAz4Slo5hx7I_1YmA0aZf?usp=sharing) with filename `FinalExercise-STUDENTNAME.gh`
 
 ## Index
@@ -77,9 +80,15 @@ In order to be able to test this, create an input in your script called **inputP
 
 # Part 2 - Create the DualGraph of a mesh
 
+:::columns
+::::column
 ![Initial example mesh](assets/img/final-exercise/initialMesh.png)
+::::
 
+::::column
 ![Dual mesh](assets/img/final-exercise/dualMesh.png)
+::::
+:::
 
 Add a new input to your python script node, call it `inputMesh` and set it's type hint to `Mesh`.
 
